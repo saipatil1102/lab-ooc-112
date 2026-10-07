@@ -5,8 +5,11 @@ const double PI = 3.14159;
 
 class Shape {
 public:
-    virtual double calculateArea() const = 0;
-    virtual double calculatePerimeter() const = 0;
+    virtual double calculateArea() const = 0; //pure virtual
+    virtual double calculatePerimeter() const //virtual concrete
+    {
+        return 2*PI;
+    }
 };
 
 class Circle : public Shape {
@@ -20,9 +23,9 @@ public:
         return PI * pow(radius, 2);
     }
 
-    double calculatePerimeter() const override {
-        return 2 * PI * radius;
-    }
+    // double calculatePerimeter() const override {
+        // return 2 * PI * radius;
+    // }
 };
 
 class Rectangle : public Shape {
@@ -63,6 +66,7 @@ public:
 };
 
 int main() {
+    // Shape sh;
     Circle circle(7.0);
     Rectangle rectangle(4.2, 8.0);
     Triangle triangle(4.0, 4.0, 3.2);
