@@ -5,7 +5,7 @@ class MyException : public exception{
  public: 
  const char * what() const throw() 
  { 
- return "Attempted to divide by zero!\n"
+ return "Attempted to divide by zero!\n";
  } 
 }; 
 int main() 
